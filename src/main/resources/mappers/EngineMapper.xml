@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.repository.EngineRepository">
+	<resultMap type="com.example.domain.carInfo.Engine" id="EngineResultMap">
+		<id property="engineId" column="engineId" />
+		<result property="displacement" column="displacement" />
+		<result property="AirIntakeForm" column="AirIntakeForm" />
+		<result property="cylinder" column="cylinder" />
+		<result property="maxPS" column="maxPS" />
+		<result property="maxNM" column="maxNM" />
+		<result property="fuelType" column="fuelType" />
+		<result property="FuelLabel" column="FuelLabel" />
+		<result property="OilSupplyWay" column="OilSupplyWay" />
+		<result property="EmissionStandards" column="EmissionStandards" />
+	</resultMap>
+
+
+	<select id="select" resultMap="EngineResultMap" >
+		SELECT * FROM engine
+	</select>
+
+
+</mapper>

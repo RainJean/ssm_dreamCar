@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ssm_dreamCar.iml" filepath="$PROJECT_DIR$/ssm_dreamCar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ssm_dreamCar_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ssm_dreamCar_main.iml" group="ssm_dreamCar" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ssm_dreamCar_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ssm_dreamCar_test.iml" group="ssm_dreamCar" />
+    </modules>
+  </component>
+</project>

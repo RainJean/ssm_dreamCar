@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.repository.BasicInfoRepository">
+	<resultMap type="com.example.domain.carInfo.BasicInfo" id="BasicInfoResultMap">
+		<id property="carId" column="carId" />
+		<result property="brand" column="brand" />
+		<result property="carGrade" column="carGrade" />
+		<result property="engineType" column="engineType" />
+		<result property="gearbox" column="gearbox" />
+		<result property="bodywork" column="bodywork" />
+		<result property="LWH" column="LWH" />
+		<result property="wheelbase" column="wheelbase" />
+		<result property="cargoVolume" column="cargoVolume" />
+		<result property="weight" column="weight" />
+	</resultMap>
+
+	<select id="select" resultMap="BasicInfoResultMap" >
+		SELECT * FROM basicinfo
+	</select>
+
+
+</mapper>

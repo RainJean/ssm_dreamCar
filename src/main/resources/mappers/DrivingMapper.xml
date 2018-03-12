@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.repository.DrivingRepository">
+	<resultMap type="com.example.domain.carInfo.Driving" id="DrivingResultMap">
+		<id property="drivingId" column="drivingId" />
+		<result property="drivingMethod" column="drivingMethod" />
+		<result property="brakeType" column="brakeType" />
+		<result property="frontSuspensionType" column="frontSuspensionType" />
+		<result property="rearSuspensionType" column="rearSuspensionType" />
+		<result property="frontbrakingType" column="frontbrakingType" />
+		<result property="rearbrakingType" column="rearbrakingType" />
+		<result property="parkingBrakeType" column="parkingBrakeType" />
+		<result property="frontTireRule" column="frontTireRule" />
+		<result property="rearTireRule" column="rearTireRule" />
+
+	</resultMap>
+
+	<select id="select" resultMap="DrivingResultMap" >
+		SELECT * FROM driving
+	</select>
+
+
+</mapper>

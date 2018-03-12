@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.repository.ChengShiRepository">
+	<resultMap type="com.example.domain.dizhi.ChengShi" id="ChengShiResultMap">
+		<id property="cId" column="c_id" />
+		<result property="cName" column="c_name" />
+		<result property="cPinyin" column="c_pinyin" />
+		<result property="cShengfenId" column="c_shengfenId" />
+
+		<association property="shengFen" column="c_shengfenId" javaType="com.example.domain.dizhi.ShengFen">
+			<id property="sId" column="s_id" />
+			<result property="sName" column="s_name" />
+			<result property="sFirstCharacter" column="s_firstCharacter" />
+			<result property="sPinyin" column="s_pinyin" />
+		</association>
+	</resultMap>
+
+	<select id="select" resultMap="ChengShiResultMap" >
+		select * from chengshi c,shengfen s WHERE s.s_id=c.c_shengfenId ;
+	</select>
+</mapper>

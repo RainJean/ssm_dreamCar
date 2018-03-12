@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.repository.UserRepository">
+    <resultMap type="com.example.domain.user.User" id="UserResultMap">
+        <id property="uId" column="u_id" />
+        <result property="uName" column="u_name" />
+        <result property="uPassWord" column="u_passWord" />
+        <result property="uPhone" column="u_phone" />
+        <result property="uAddress" column="u_address" />
+        <result property="uBornDate" column="u_bornDate" />
+        <result property="uEmail" column="u_email" />
+        <result property="uIdentityCard" column="u_identityCard" />
+
+        <association property="gender" column="g_id" javaType="com.example.domain.user.Gender">
+            <id property="gId" column="g_id" />
+            <result property="gName" column="g_name" />
+        </association>
+
+    </resultMap>
+
+
+    <insert id="insert" parameterType="com.example.domain.user.User">
+        INSERT INTO user(u_name, u_passWord, u_phone, u_address, u_bornDate, u_email, u_identityCard, u_genderId,enabled )
+        values(#{uName},#{uPassWord},#{uPhone},#{uAddress},#{uBornDate},#{uEmail},#{uIdentityCard},#{gender.gId},TRUE )
+    </insert>
+
+    <select id="select" resultMap="UserResultMap">
+        SELECT * FROM user;
+    </select>
+
+    <select id="selById" parameterType="com.example.domain.user.User" resultMap="UserResultMap">
+        SELECT * FROM user WHERE u_id=#{uId};
+    </select>
+
+    <delete id="delete" parameterType="com.example.domain.user.User" >
+        DELETE FROM user WHERE u_id=#{uId};
+    </delete>
+
+</mapper>
